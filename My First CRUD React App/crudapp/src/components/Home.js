@@ -20,12 +20,15 @@ const Home = () => {
         setPersons(result.data.reverse())
     }
 
+    const [updateID,setUpdateID] = useState('')
+
     const setPersonID = (id) => {
-        localStorage.setItem("id",id)
+        setUpdateID(id)
+        console.log(id);
     }
 
     const deletePerson = (id) => {
-        axios.delete("http://localhost:3000/user",id).then(window.location.reload())
+        axios.delete("http://localhost:3000/user"+id).then(window.location.reload())
     }
 
   return (
@@ -46,7 +49,7 @@ const Home = () => {
         role="dialog" 
         aria-labelledby="UpdatePersonModalLabel" 
         aria-hidden="true">
-            <UpdatePerson></UpdatePerson>
+            <UpdatePerson id={updateID}></UpdatePerson>
         </div>
 
         <div className="card bg-dark">
