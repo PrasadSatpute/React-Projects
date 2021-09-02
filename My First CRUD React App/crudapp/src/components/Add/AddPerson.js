@@ -1,7 +1,30 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
+import {useHistory} from 'react-router-dom'
 
 const AddPerson = () => {
+
+  const [person,setPerson] = useState({
+    name:"",
+    dob:"",
+    gender:""
+  })
+
+  const {name,dob,gender} = person
+
+  const onInputChange = e => {
+    setPerson({...person,[e.target.name]: e.target.value})
+  }
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    await axios.post("http://localhost:3000/user",person)
+    window.location.reload();
+  }
+  
+
   return (
+    <form onSubmit={e => onSubmit(e)}>
     <div className="modal-dialog" role="document">
     <div className="modal-content">
       <div className="modal-header">
@@ -11,33 +34,49 @@ const AddPerson = () => {
         </button>
       </div>
       <div className="modal-body">
-        <form>
+        
           <div className='form-row'>
             <div className='form-group col-md-6'>
-              <label for='name'>NAME</label>
-              <input className='form-control' type='text'></input>
+              <label htmlFor='name'>NAME</label>
+              <input 
+              className='form-control' 
+              type='text'
+              name="name"
+              value={name}
+              onChange={e => onInputChange(e)}></input>
             </div>
             <div className='form-group col-md-6'>
-              <label for='name'>DOB</label>
-              <input className='form-control' type='date'></input>
+              <label htmlFor='dob'>DOB</label>
+              <input 
+              className='form-control' 
+              type='date'
+              name="dob"
+              value={dob}
+              onChange={e => onInputChange(e)}></input>
             </div>
             <div className='form-group col-md-6'>
-              <label for='gender'>GENDER</label>
-              <select id="gender" class="form-control">
+              <label htmlFor='gender'>GENDER</label>
+              <select 
+              id="gender" 
+              class="form-control"
+              name="gender"
+              value={gender}
+              onChange={e => onInputChange(e)}>
                 <option selected value='0'>Choose...</option>
-                <option value='1'>Male</option>
-                <option value='2'>Female</option>
+                <option value='male'>Male</option>
+                <option value='female'>Female</option>
             </select>
             </div>
           </div>
-        </form>
+        
       </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
+  </form>
   );
 }
 

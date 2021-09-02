@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import AddPerson from './Add/AddPerson';
@@ -6,6 +7,27 @@ import UpdatePerson from './Update/UpdatePerson';
 
 
 const Home = () => {
+    
+    const [persons, setPersons] = useState([])
+
+    useEffect(() => {
+        loadPersons()
+    },[])
+
+    const loadPersons = async () => {
+        const result = await axios.get("http://localhost:3000/user")
+        console.log(result.data)
+        setPersons(result.data.reverse())
+    }
+
+    const setPersonID = (id) => {
+        localStorage.setItem("id",id)
+    }
+
+    const deletePerson = (id) => {
+        axios.delete("http://localhost:3000/user",id).then(window.location.reload())
+    }
+
   return (
     <div className='homecard'>
         
@@ -39,24 +61,31 @@ const Home = () => {
                         <th scope="col">NAME</th>
                         <th scope="col">DOB</th>
                         <th scope="col">GENDER</th>
-                        <th scope="col"></th>
+                        <th scope="col">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Prasad</td>
-                            <td>18</td>
-                            <td>Male</td>
-                            <td>
-                                <button className='btn btn-primary btn-sm'>View</button>
-                                <button 
-                                className='btn btn-success btn-sm'
-                                data-toggle="modal" 
-                                data-target="#UpdatePersonModal">Update</button>
-                                <button className='btn btn-danger btn-sm'>Delete</button>
-                            </td>
-                        </tr>
+                        {persons.map((val,index) => {
+                            return(
+                                <tr key={val.id}>
+                                <td>{index + 1}</td>
+                                <td>{val.name}</td>
+                                <td>{val.dob}</td>
+                                <td>{val.gender}</td>
+                                <td className="operationbtn">
+                                    <button className='btn btn-primary btn-sm'>View</button>
+                                    <button 
+                                    className='btn btn-success btn-sm'
+                                    data-toggle="modal" 
+                                    data-target="#UpdatePersonModal"
+                                    onClick={() => setPersonID(val.id)}>Update</button>
+                                    <button 
+                                    className='btn btn-danger btn-sm'
+                                    onClick={() => deletePerson(val.id)}>Delete</button>
+                                </td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
