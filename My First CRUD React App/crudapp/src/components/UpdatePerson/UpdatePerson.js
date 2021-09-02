@@ -9,19 +9,15 @@ const UpdatePerson = (props) => {
 
   const[person,setPerson] = useState([])
 
-  console.log(props.id)
-  const UpdateID = props.id
   
+  const UpdateID = 10
 
   useEffect(() => {
-    onLoadPerson()
+    console.log('update',props.id)
   },[])
 
   const onLoadPerson = () => {
-    const result = axios.get("http://localhost:3000/user/"+props.id)
-    console.log(" ID " + UpdateID);
-    console.log(result.data)
-    setPerson(result.data)
+    
   }
   
 

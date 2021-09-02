@@ -22,11 +22,18 @@ const Home = () => {
     }
 
     const [updateID,setUpdateID] = useState('')
+    const [updateName,setUpdateName] = useState('')
+    const [updateDOB,setUpdateDOB] = useState('')
+    const [updateGender,setUpdateGender] = useState('')
     const [viewID,setviewID] = useState('')
 
-    const setPersonID = (id) => {
-        setUpdateID(id)
-        console.log(id);
+    const [updatePerson,setUpdatePerson] = useState([])
+
+    const setPersonID = async (id) => {
+        const getID = id
+        const result = await axios.get(`http://localhost:3000/user/${getID}`)
+        console.log(result.data)
+        setUpdatePerson(result.data)
     }
 
     const setPersonViewID = (id) => {
@@ -77,7 +84,7 @@ const Home = () => {
         role="dialog" 
         aria-labelledby="UpdatePersonModalLabel" 
         aria-hidden="true">
-            <UpdatePerson id={updateID}></UpdatePerson>
+            <UpdatePerson persondata={updatePerson}></UpdatePerson>
         </div>
 
         <div className="card bg-dark">
