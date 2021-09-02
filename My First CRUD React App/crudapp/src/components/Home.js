@@ -2,8 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import AddPerson from './Add/AddPerson';
-import UpdatePerson from './Update/UpdatePerson';
+import AddPerson from './AddPerson/AddPerson';
+import UpdatePerson from './UpdatePerson/UpdatePerson';
+import ViewPerson from './ViewPerson/ViewPerson';
 
 
 const Home = () => {
@@ -21,14 +22,28 @@ const Home = () => {
     }
 
     const [updateID,setUpdateID] = useState('')
+    const [viewID,setviewID] = useState('')
 
     const setPersonID = (id) => {
         setUpdateID(id)
         console.log(id);
     }
 
+    const setPersonViewID = (id) => {
+        setviewID(id)
+        console.log(id);
+    }
+
     const deletePerson = (id) => {
-        axios.delete("http://localhost:3000/user"+id).then(window.location.reload())
+        axios.delete("http://localhost:3000/user/"+id).then(window.location.reload())
+    }
+
+    const deleteAll = () => {
+        setPersons([])
+    }
+
+    const exitWindow = () => {
+        window.close();
     }
 
     const h1Style = {
@@ -37,6 +52,15 @@ const Home = () => {
 
   return (
     <div className='homecard'>
+
+        <div class="modal fade" 
+        id="ViewPersonModal" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="ViewPersonModalLabel" 
+        aria-hidden="true">
+            <ViewPerson id={viewID}></ViewPerson>
+        </div>
         
         <div class="modal fade" 
         id="AddPersonModal" 
@@ -80,7 +104,11 @@ const Home = () => {
                                 <td>{val.dob}</td>
                                 <td>{val.gender}</td>
                                 <td className="operationbtn">
-                                    <button className='btn btn-primary btn-sm'>View</button>
+                                    <button 
+                                    className='btn btn-primary btn-sm'
+                                    data-toggle="modal" 
+                                    data-target="#ViewPersonModal"
+                                    onClick={() => setPersonViewID(val.id)}>View</button>
                                     <button 
                                     className='btn btn-success btn-sm'
                                     data-toggle="modal" 
@@ -105,12 +133,14 @@ const Home = () => {
                         data-target="#AddPersonModal">Add</button>
                     </div>
                     <div className='col'>
-                        <button className='btn btn-danger'>Delete All</button>
+                        <button 
+                        className='btn btn-danger'
+                        onClick={deleteAll}>Delete All</button>
                     </div>
                     <div className='col'>
                         <button 
                         className='btn btn-primary'
-                        >Exit</button>
+                        onClick={exitWindow}>Exit</button>
                     </div>
                 </div>
             </div>
