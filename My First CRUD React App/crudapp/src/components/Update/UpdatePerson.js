@@ -5,7 +5,7 @@ const UpdatePerson = (props) => {
 
   const[name,setName] = useState('')
   const[dob,setDOB] = useState('')
-  const[gender,setgender] = useState('')
+  const[gender,setGender] = useState('')
 
   const[person,setPerson] = useState([])
 
@@ -13,20 +13,43 @@ const UpdatePerson = (props) => {
   const UpdateID = props.id
   
 
-  const onInputChange = e => {
-    setPerson({...person,[e.target.name]: e.target.value})
+  useEffect(() => {
+    onLoadPerson()
+  },[])
+
+  const onLoadPerson = () => {
+    const result = axios.get("http://localhost:3000/user/"+props.id)
+    console.log(" ID " + UpdateID);
+    console.log(result.data)
+    setPerson(result.data)
+  }
+  
+
+  const onInputName = (e) => {
+    const name = e.target.value
+    setName(name)
+  }
+  const onInputDOB = (e) => {
+    const dob = e.target.value
+    setDOB(dob)
+  }
+  const onInputGender = (e) => {
+    const gender = e.target.value
+    setGender(gender)
   }
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put("http://localhost:3000/user",person)
+    await axios.put("http://localhost:3000/user",{
+      id:UpdateID,
+      name:name,
+      dob:dob,
+      gender:gender
+    })
     window.location.reload();
   }
 
-  useEffect(() => {
-    const result = axios.get("http://localhost:3000/user/"+UpdateID)
-    setPerson(result.data)
-  },[])
+  
     return (
       <form onSubmit={e => onSubmit(e)}>
         <div className="modal-dialog" role="document">
@@ -47,7 +70,7 @@ const UpdatePerson = (props) => {
                   type='text'
                   name="name"
                   value={name}
-                  onChange={e => onInputChange(e)}></input>
+                  onChange={() => onInputName}></input>
                 </div>
                 <div className='form-group col-md-6'>
                   <label htmlFor='dob'>DOB</label>
@@ -56,7 +79,7 @@ const UpdatePerson = (props) => {
                   type='date'
                   name="dob"
                   value={dob}
-                  onChange={e => onInputChange(e)}></input>
+                  onChange={() => onInputDOB}></input>
                 </div>
                 <div className='form-group col-md-6'>
                   <label htmlFor='gender'>GENDER</label>
@@ -65,7 +88,7 @@ const UpdatePerson = (props) => {
                   class="form-control"
                   name="gender"
                   value={gender}
-                  onChange={e => onInputChange(e)}>
+                  onChange={() => onInputGender}>
                     <option selected value='0'>Choose...</option>
                     <option value='male'>Male</option>
                     <option value='female'>Female</option>

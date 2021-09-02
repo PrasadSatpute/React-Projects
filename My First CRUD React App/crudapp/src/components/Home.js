@@ -31,6 +31,10 @@ const Home = () => {
         axios.delete("http://localhost:3000/user"+id).then(window.location.reload())
     }
 
+    const h1Style = {
+        color:'white'
+    }
+
   return (
     <div className='homecard'>
         
@@ -54,7 +58,7 @@ const Home = () => {
 
         <div className="card bg-dark">
             <div className="card-header text-center">
-                <h1>REACT CRUD APPLICATION</h1>
+                <h1 style={h1Style}>REACT CRUD APPLICATION</h1>
             </div>
             <div className="card-body text-center">
                 <table class="table table-striped table-dark">
