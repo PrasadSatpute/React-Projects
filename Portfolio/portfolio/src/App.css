@@ -31,3 +31,12 @@
   .content:hover ~ .cursor2{
     opacity: 0;
   }
+
+  .introPage{
+      height: 90vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }

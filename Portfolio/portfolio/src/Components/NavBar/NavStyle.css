@@ -1,8 +1,9 @@
-.navbarContainer{width: 100%;
+.navbarContainer{
+    width: 100%;
     display: flex;
     background-color: rgb(43, 43, 43);
     color: white;
-    height: 60px;
+    height: 10vh;
     padding: 0%;
 }
 .navListWraper{
@@ -22,7 +23,11 @@
     display: inline-block;
     cursor: pointer;
 }
+.navlistitem li:hover{
+    /* color: rgb(0, 255, 0); */
+}
 .NavlinkItem::after{
+    background-color: rgb(0, 255, 0);
     content: "";
     display: block;
     width: 0;
@@ -31,6 +36,7 @@
     transition: width .5s;
 }
 .NavlinkItem:hover::after{
+    background-color: rgb(0, 255, 0);
     width: 100%;
     transition: width .5s;
 }
@@ -52,6 +58,9 @@
         top: 50%;
         transform: translate(-5%,-50%);
         z-index: 2;
+    }
+    .line:hover{
+        background-color: rgb(0, 255, 0);;
     }
     .navlistitem{
         flex-direction: column;
