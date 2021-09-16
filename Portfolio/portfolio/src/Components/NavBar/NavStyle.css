@@ -22,6 +22,11 @@
 .navlistitem li{
     display: inline-block;
     cursor: pointer;
+    list-style: none;
+}
+.navlistitem li a{
+    text-decoration: none;
+    color: white;
 }
 .navlistitem li:hover{
     /* color: rgb(0, 255, 0); */

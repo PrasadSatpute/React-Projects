@@ -14,8 +14,12 @@ const Nav = () => {
             </div>
             <div className='navListWraper'>
                 <ul className='navlistitem'>
-                    <li className='NavlinkItem'>HOME</li>
-                    <li className='NavlinkItem'>RESUME</li>
+                    <li className='NavlinkItem'>
+                        <a href='#introPageID'>HOME</a>
+                    </li>
+                    <li className='NavlinkItem'>
+                        <a href='#resumePageID'>RESUME</a>
+                    </li>
                     <li className='NavlinkItem'>PROJECTS</li>
                     <li className='NavlinkItem'>CONTACT</li>
                 </ul>

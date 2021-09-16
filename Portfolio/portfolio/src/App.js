@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './Components/NavBar/Nav';
 import IntroPage from './Components/IntroPage/IntroPage';
+import Resume from './Components/Resume/Resume';
 
 function App() {
   return (
@@ -12,8 +13,13 @@ function App() {
           <Nav></Nav>
         </div>
 
-        <div className='introPage'>
+        <div className='introPage' id="introPageID">
+
           <IntroPage></IntroPage>
+        </div>
+
+        <div className='resumePage' id='resumePageID'>
+          <Resume></Resume>
         </div>
 
     </div>
