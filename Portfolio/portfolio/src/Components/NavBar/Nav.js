@@ -1,6 +1,7 @@
 import React from "react"
 import Logo from "./LOGO.png"
 import "./NavStyle.css"
+import logo from "../../Images/NavLogo.png"
 
 const Nav = () => {
     
@@ -11,6 +12,11 @@ const Nav = () => {
                 <div className='line'></div>
                 <div className='line'></div>
                 <div className='line'></div>
+            </div>
+            <div className='navlogo'>
+                <span>
+                    <img src={logo}></img>
+                </span>
             </div>
             <div className='navListWraper'>
                 <ul className='navlistitem'>

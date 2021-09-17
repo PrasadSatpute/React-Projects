@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import Nav from './Components/NavBar/Nav';
 import IntroPage from './Components/IntroPage/IntroPage';
 import Resume from './Components/Resume/Resume';
+import bgimg from "./Images/LOGO.png"
 
 function App() {
   return (

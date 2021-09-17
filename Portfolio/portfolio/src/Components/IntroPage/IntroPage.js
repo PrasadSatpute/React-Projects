@@ -6,7 +6,12 @@ const IntroPage = () => {
         <div className='introPageWraper'>
             <h5>Hello My Name Is</h5>
             <h1>Prasad Satpute</h1>
-            <h4>And I'm WebDeveloper</h4>
+            <h4>And I'm <b>WebDeveloper</b>
+            {/* <span className='dynamicText'>WebDeveloper</span>
+            <span className='dynamicText'>Freelancer</span>
+            <span className='dynamicText'>Designer</span>
+            <span className='dynamicText'>Coder</span> */}
+            </h4>
             
             <button type="button" className="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">
             Hire Me
