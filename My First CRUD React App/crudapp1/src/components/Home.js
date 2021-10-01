@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import AddPerson from './AddPerson/AddPerson';
 import UpdatePerson from './UpdatePerson/UpdatePerson';
 import ViewPerson from './ViewPerson/ViewPerson';
+import ViewPersonNew from './ViewPersonNew/ViewPerson';
 
 
 const Home = () => {
@@ -28,21 +29,35 @@ const Home = () => {
     const [viewID,setviewID] = useState('')
 
     const [updatePerson,setUpdatePerson] = useState([])
+    const [viewPerson,setViewPerson] = useState([])
 
     const setPersonID = async (id) => {
-        const getID = id
-        const result = await axios.get(`http://localhost:3004/user/${getID}`)
-        console.log(result.data)
-        setUpdatePerson(result.data)
+
+        const ID = id
+        console.log("Update ID = "+ID);
+        setUpdateID(ID)
+        console.log("After Set Update ID = "+updateID);
+        // const result =  axios.get(`http://localhost:3004/user/${ID}`)
+        // console.log(result.data)
+        // setUpdatePerson(result.data)
     }
 
     const setPersonViewID = (id) => {
-        setviewID(id)
-        console.log(id);
+        const getID = id
+        const result = axios.get(`http://localhost:3004/user/${getID}`)
+        console.log(result.data)
+        setPersonViewID(result.data)
     }
 
     const deletePerson = (id) => {
-        axios.delete("http://localhost:3004/user/"+id).then(window.location.reload())
+        const ID = id
+        console.log("Delete Person ID = "+ID);
+        axios.delete("http://localhost:3004/user/"+ID).then(
+            axios.get("http://localhost:3004/user").then((response) => {
+                setPersons(response.data.reverse())
+                window.location.reload()
+            })
+        )
     }
 
     const deleteAll = () => {
@@ -60,14 +75,14 @@ const Home = () => {
   return (
     <div className='homecard'>
 
-        <div class="modal fade" 
+        {/* <div class="modal fade" 
         id="ViewPersonModal" 
         tabindex="-1" 
         role="dialog" 
         aria-labelledby="ViewPersonModalLabel" 
         aria-hidden="true">
-            <ViewPerson id={viewID}></ViewPerson>
-        </div>
+            <ViewPerson id={viewPerson}></ViewPerson>
+        </div> */}
         
         <div class="modal fade" 
         id="AddPersonModal" 
@@ -84,7 +99,7 @@ const Home = () => {
         role="dialog" 
         aria-labelledby="UpdatePersonModalLabel" 
         aria-hidden="true">
-            <UpdatePerson persondata={updatePerson}></UpdatePerson>
+            <UpdatePerson persondata={updateID}></UpdatePerson>
         </div>
 
         <div className="card bg-dark">
@@ -111,11 +126,11 @@ const Home = () => {
                                 <td>{val.dob}</td>
                                 <td>{val.gender}</td>
                                 <td className="operationbtn">
-                                    <button 
+                                <button 
                                     className='btn btn-primary btn-sm'
                                     data-toggle="modal" 
-                                    data-target="#ViewPersonModal"
-                                    onClick={() => setPersonViewID(val.id)}>View</button>
+                                    data-target="#UpdatePersonModal"
+                                    onClick={() => setPersonID(val.id)}>View</button>
                                     <button 
                                     className='btn btn-success btn-sm'
                                     data-toggle="modal" 

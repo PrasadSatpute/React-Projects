@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -23,8 +23,7 @@
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>React App</title>
   </head>
   <body>
@@ -41,56 +40,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script>
-    const Hamburger = document.querySelector('.Hamburger')
-    const navListWraper = document.querySelector('.navListWraper')
-    const navlistitem = document.querySelector('.navlistitem li')
-
-
-    Hamburger.addEventListener("click",() => {
-        navListWraper.classList.toggle("open")
-    })
-  </script>
-  <script>
-    var cursor = document.querySelector(".cursor");
-    var cursor2 = document.querySelector(".cursor2");
-    document.addEventListener("mousemove",function(e){
-      cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-    });
-  </script>
-  <!-- <script>
-    const divpoint = document.querySelectorAll('div');
-    divpoint.forEach(point => {
-      point.addEventListener('click',function(e){
-
-        let x = e.clientX - e.target.offsetLeft;
-        let y = e.clientX - e.target.offsetTop;
-
-        let ripples = document.createElement('span');
-        ripples.style.left = x + 'px';
-        ripples.style.top = y + 'px';
-        this.appendChild(ripples);
-
-        setTimeout(() => {
-          ripples.remove()
-        },1000)
-      })
-    });
-  </script> -->
-  <script>
-    var demo = document.getElementById('demo');
-
-    var typewriter = new Typewriter(demo, {
-    strings: ['Strings', 'To', 'Type'],
-    cursor: '|',
-    delay: 'natural', // 'natural' or Number
-    loop: false, // infinite loop
-    autoStart: false,
-    devMode: false,
-    wrapperClassName: 'Typewriter__wrapper',
-    cursorClassName: 'Typewriter__cursor',
-});
-  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

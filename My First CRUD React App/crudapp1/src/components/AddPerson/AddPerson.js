@@ -63,8 +63,8 @@ const AddPerson = () => {
               value={gender}
               onChange={e => onInputChange(e)}>
                 <option selected value='0'>Choose...</option>
-                <option value='male'>Male</option>
-                <option value='female'>Female</option>
+                <option value='Male'>Male</option>
+                <option value='Female'>Female</option>
             </select>
             </div>
           </div>

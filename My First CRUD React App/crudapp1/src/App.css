@@ -1,0 +1,10 @@
+.homecard{
+    margin-top: 20px;
+}
+.operationbtn button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.operationbtn {
+    display: flex;
+}

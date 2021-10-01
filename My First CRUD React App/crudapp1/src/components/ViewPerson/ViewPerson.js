@@ -14,15 +14,19 @@ const ViewPerson = (props) => {
   
 
   useEffect(() => {
-    onLoadPerson()
+    console.log("Modal Get ID = "+UpdateID);
+    axios.get("http://localhost:3004/user/"+UpdateID).then((response) => {
+      console.log(response);
+      setPerson(response.data)
+    })
   },[])
 
-  const onLoadPerson = () => {
-    const result = axios.get("http://localhost:3004/user/"+props.id)
-    console.log(" ID " + UpdateID);
-    console.log(result.data)
-    setPerson(result.data)
-  }
+  // const onLoadPerson = () => {
+  //   const result = axios.get("http://localhost:3004/user/"+UpdateID)
+  //   console.log(" ID " + UpdateID);
+  //   console.log(result.data)
+  //   setPerson(result.data)
+  // }
 
   
     return (

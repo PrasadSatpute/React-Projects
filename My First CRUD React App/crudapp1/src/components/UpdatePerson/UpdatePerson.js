@@ -10,10 +10,12 @@ const UpdatePerson = (props) => {
   const[person,setPerson] = useState([])
 
   
-  const UpdateID = 10
+
+  const UpdateID = props.persondata
 
   useEffect(() => {
-    console.log('update',props.id)
+    console.log("-------------");
+    console.log('Modal Update ID = ',UpdateID)
   },[])
 
   const onLoadPerson = () => {
