@@ -19,10 +19,10 @@ const Contact = () => {
       <div className="contact">
         <h3>Email Us</h3>
         <div className="alert">Your message has been sent</div>
-        <form method='POST' id="contactForm" action='https://script.google.com/macros/s/AKfycbwlr6NQDG7_gc4LFunaiRPmM8enk1h1ASY-uJnPyTIQtDGQKaPVw_PrSQ5m0gPJzk2KZw/exec'>
+        <form autocomplete="off" method='POST' id="contactForm" action='https://script.google.com/macros/s/AKfycbwlr6NQDG7_gc4LFunaiRPmM8enk1h1ASY-uJnPyTIQtDGQKaPVw_PrSQ5m0gPJzk2KZw/exec'>
           <p>
             <label htmlFor='name'>Name</label>
-            <input type="text" name="name" id="name" required />
+            <input autocomplete="off" type="text" name="name" id="name" required />
           </p>
           {/* <p>
             <label>Company</label>

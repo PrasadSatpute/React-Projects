@@ -20,6 +20,10 @@ nav{
     justify-content: center;
     align-items: center;
 }
+.NavBarLogo h4{
+    color: white;
+    cursor: pointer;
+}
 .nav-links{
     display: flex;
     list-style: none;
@@ -35,6 +39,10 @@ nav{
     text-decoration: none;
     font-size: 16px;
     border: none;
+}
+.nav-links li a:hover{
+    color: black;
+    font-weight: bold;
 }
 @media screen and (max-width:768px){
     .line{

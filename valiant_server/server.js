@@ -8,9 +8,11 @@ app.use(bodyParser.json())
 
 // routers
 const routerUser = require('./routers/user')
+const routeraddtable = require('./routers/addtable')
 
 // add the routers
 app.use('/user', routerUser)
+app.use('/addtable', routeraddtable)
 
 // static routing
 // any file in uploads directory does not require any route
