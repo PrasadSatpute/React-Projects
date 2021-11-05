@@ -77,8 +77,8 @@ nav{
         border: none;
     }
     .nav-links.open{
-        clip-path: circle(1000px at 90% -10%);
-        -webkit-clip-path: circle(1000px at 90% -10%);
+        clip-path: circle(1500px at 90% -10%);
+        -webkit-clip-path: circle(1500px at 90% -10%);
         pointer-events: all;
         border: none;
     }
@@ -100,6 +100,10 @@ nav{
     }
     .nav-links li:nth-child(3){
         transition: all 0.5s ease 0.6s;
+        border: none;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.8s;
         border: none;
     }
     li.fade{
