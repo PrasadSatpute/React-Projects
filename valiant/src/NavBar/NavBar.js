@@ -10,12 +10,12 @@ const NavBar = () => {
         <nav>
             <div className='NavBarLogo logotext'><h4>VALIANT</h4></div>
             <div className='NavBarLogo'><img className='logo' src={LOGO}></img></div>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+            <div className="hamburger">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
             </div>
-            <ul class="nav-links">
+            <ul className="nav-links">
                 <li><a href="#About">ABOUT</a></li>
                 
                 <li><a href="#Project">PROJECTS</a></li>
