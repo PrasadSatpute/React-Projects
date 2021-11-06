@@ -1,13 +1,15 @@
 import React from 'react'
 import './NavBar.css'
 
+import LOGO from '../Image/Valiant_Nav_Logo.png';
+
 
 const NavBar = () => {
     
     return(
         <nav>
-            <div className='NavBarLogo'><h4>VALIANT</h4></div>
-            <div className='NavBarLogo'><h4>LOGO</h4></div>
+            <div className='NavBarLogo logotext'><h4>VALIANT</h4></div>
+            <div className='NavBarLogo'><img className='logo' src={LOGO}></img></div>
             <div class="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>

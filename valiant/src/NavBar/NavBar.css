@@ -12,6 +12,11 @@ nav{
     background: #5b78c7;
     border: none;
     display: flex;
+    box-shadow: 10px 10px 10px 10px rgba(100, 102, 105, 0.7);
+}
+.logo{
+    height: 30px;
+    width: 40px;
 }
 .NavBarLogo{
     margin-left: 20px;
@@ -54,6 +59,7 @@ nav{
     }
     nav{
         position: sticky;
+        
     }
     .hamburger{
         position: absolute;
