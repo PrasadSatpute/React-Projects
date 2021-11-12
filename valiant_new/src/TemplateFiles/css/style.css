@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+/* #header {
   padding: 30px 0;
   height: 92px;
   position: absolute;
@@ -81,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
-  /*background-color: red;*/
 }
 
 #header #logo {
@@ -109,10 +108,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   height: 50px;
   width: 50px;
-  /*background-color: blue;*/
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #header #logo h1 {
     font-size: 26px;
   }
@@ -126,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
-}
+} */
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -222,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Nav Menu Essentials */
-.nav-menu, .nav-menu * {
+/* .nav-menu, .nav-menu * {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -257,10 +255,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu ul li {
   min-width: 180px;
-}
+} */
 
 /* Nav Menu Arrows */
-.sf-arrows .sf-with-ul {
+/* .sf-arrows .sf-with-ul {
   padding-right: 30px;
 }
 
@@ -275,10 +273,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .sf-arrows ul .sf-with-ul:after {
   content: "\f105";
-}
+} */
 
 /* Nav Meu Container */
-#nav-menu-container {
+/* #nav-menu-container {
   float: right;
   margin: 0;
 }
@@ -287,10 +285,10 @@ h1, h2, h3, h4, h5, h6 {
   #nav-menu-container {
     display: none;
   }
-}
+} */
 
 /* Nav Meu Styling */
-.nav-menu a {
+/* .nav-menu a {
   padding: 0 8px 10px 8px;
   text-decoration: none;
   display: inline-block;
@@ -356,10 +354,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu ul ul {
   margin: 0;
-}
+} */
 
 /* Mobile Nav Toggle */
-#mobile-nav-toggle {
+/* #mobile-nav-toggle {
   position: fixed;
   right: 0;
   top: 0;
@@ -382,10 +380,10 @@ h1, h2, h3, h4, h5, h6 {
   #mobile-nav-toggle {
     display: inline;
   }
-}
+} */
 
 /* Mobile Nav Styling */
-#mobile-nav {
+/* #mobile-nav {
   position: fixed;
   top: 0;
   padding-top: 18px;
@@ -454,10 +452,10 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   background: rgba(52, 59, 64, 0.9);
   display: none;
-}
+} */
 
 /* Mobile Nav body classes */
-body.mobile-nav-active {
+/* body.mobile-nav-active {
   overflow: hidden;
 }
 
@@ -467,7 +465,7 @@ body.mobile-nav-active #mobile-nav {
 
 body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
-}
+} */
 
 /*--------------------------------------------------------------
 # Sections
