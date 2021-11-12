@@ -17,7 +17,7 @@ const Teams = () => {
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src={team1IMG} alt=""/></div>
-              <h4>Abheejit Pawar</h4>
+              <h4>UJWAL MENDHE</h4>
               <span>Chief Executive Officer</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>

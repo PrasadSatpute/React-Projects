@@ -6,7 +6,7 @@ const Contact = () =>{
       <div class="container wow fadeInUp">
         <div class="section-header">
           <h3 class="section-title">Contact</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p class="section-description">VALIANT REAL-ESTATE AND CONSTRUCTIONS</p>
         </div>
       </div>
 
@@ -19,17 +19,17 @@ const Contact = () =>{
             <div class="info">
               <div>
                 <i class="fa fa-map-marker"></i>
-                <p>A108 Adam Street<br/>New York, NY 535022</p>
+                <p>Manewada Road<br/>Nagpur</p>
               </div>
 
               <div>
                 <i class="fa fa-envelope"></i>
-                <p>info@example.com</p>
+                <p>valiant@gmail.com</p>
               </div>
 
               <div>
                 <i class="fa fa-phone"></i>
-                <p>+1 5589 55488 55s</p>
+                <p>(+91)9595754529</p>
               </div>
             </div>
 

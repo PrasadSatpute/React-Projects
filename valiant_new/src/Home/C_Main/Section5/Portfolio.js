@@ -26,10 +26,11 @@ const Portfolio = () =>{
           <div className="col-lg-12">
             <ul id="portfolio-flters">
               <li data-filter=".filter-app, .filter-card, .filter-logo, .filter-web" className="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-logo">Logo</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">House</li>
+              <li data-filter=".filter-card">Buildings</li>
+              <li data-filter=".filter-logo">Shops</li>
+              <li data-filter=".filter-web">Interior</li>
+              <li data-filter=".filter-web">Other</li>
             </ul>
           </div>
         </div>
