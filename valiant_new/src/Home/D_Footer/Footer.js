@@ -11,7 +11,7 @@ const Footer = () => {
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>ULFA</strong>. All Rights Reserved
+        &copy; Copyright <strong>VALIANT</strong>. All Rights Reserved
       </div>
       
     </div>

@@ -1,7 +1,45 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import './Contact.css'
 
 const Contact = () => {
+
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [phone,setPhone] = useState('')
+  const [message,setMessage] = useState('')
+
+  const onChangeName = (e) => {
+    const name = e.target.value;
+    setName(name);
+  };
+  const onChangeEmail = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+  };
+  const onChangePhone = (e) => {
+    const phone = e.target.value;
+    setPhone(phone);
+  };
+  const onChangeMessage = (e) => {
+    const message = e.target.value;
+    setMessage(message);
+  };
+
+  const Submit = () => {
+    axios.post('https://script.google.com/macros/s/AKfycbyBrXWNzaGCAq6JI0JBwzjUd1HgE_YpdDDNi6uvgcwC4iyygYAcWe66ZYWfa9_4tcfP/exec',{
+        name:name,
+        email:email,
+        phone:phone,
+        message:message
+    })
+    .then((response) => {
+        
+      console.log(response);
+        alert("Data Successfull Send")
+        
+    })
+}
     
     return(
         <div className='Contact' id='Contact'>
@@ -19,10 +57,16 @@ const Contact = () => {
       <div className="contact">
         <h3>Email Us</h3>
         <div className="alert">Your message has been sent</div>
-        <form autocomplete="off" method='POST' id="contactForm" action='https://script.google.com/macros/s/AKfycbwlr6NQDG7_gc4LFunaiRPmM8enk1h1ASY-uJnPyTIQtDGQKaPVw_PrSQ5m0gPJzk2KZw/exec'>
+        <form autocomplete="off" method='POST' id="contactForm" action='https://script.google.com/macros/s/AKfycbyBrXWNzaGCAq6JI0JBwzjUd1HgE_YpdDDNi6uvgcwC4iyygYAcWe66ZYWfa9_4tcfP/exec'>
           <p>
             <label htmlFor='name'>Name</label>
-            <input autocomplete="off" type="text" name="name" id="name" required />
+            <input 
+            autocomplete="off" 
+            type="text" 
+            name="name" 
+            id="name" 
+            onChange={onChangeName}
+            required />
           </p>
           {/* <p>
             <label>Company</label>
@@ -30,18 +74,18 @@ const Contact = () => {
           </p> */}
           <p>
             <label htmlFor='email'>Email Address</label>
-            <input type="email" name="email" id="email" required />
+            <input onChange={onChangeEmail} type="email" name="email" id="email" required />
           </p>
           <p>
             <label htmlFor='phone'>Phone Number</label>
-            <input type="text" name="phone" id="phone" />
+            <input onChange={onChangePhone} type="text" name="phone" id="phone" />
           </p>
           <p className="full">
             <label htmlFor='message'>Message</label>
-            <textarea name="message" rows="5" id="message"></textarea>
+            <textarea onChange={onChangeMessage} name="message" rows="5" id="message"></textarea>
           </p>
           <p className="full">
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={Submit}>Submit</button>
           </p>
         </form>
       </div>

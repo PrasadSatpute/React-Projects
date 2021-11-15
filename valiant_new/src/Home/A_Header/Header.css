@@ -12,3 +12,10 @@ nav{
 .collapse .navbar-nav li a:hover{
     color: #082F5B !important;
 }
+
+@media (max-width: 768px){
+    .navbar-nav{
+        justify-content: center;
+        align-items: center;
+    }
+}

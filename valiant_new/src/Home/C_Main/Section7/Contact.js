@@ -19,12 +19,13 @@ const Contact = () =>{
             <div class="info">
               <div>
                 <i class="fa fa-map-marker"></i>
-                <p>Manewada Road<br/>Nagpur</p>
+                <p>19B, Bhoyar Layout Balaji Nagar,
+                  <br/>Manewada Road, <br/>Nagpur , 440027</p>
               </div>
 
               <div>
                 <i class="fa fa-envelope"></i>
-                <p>valiant@gmail.com</p>
+                <p>valiantconstruction11@gmail.com</p>
               </div>
 
               <div>
