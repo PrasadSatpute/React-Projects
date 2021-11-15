@@ -1,0 +1,14 @@
+nav{
+}
+.logo{
+    height: 30px;
+    width: 40px;
+}
+
+.nav-link{
+    font-weight: bold;
+}
+
+.collapse .navbar-nav li a:hover{
+    color: #082F5B !important;
+}
