@@ -8,7 +8,7 @@ const Footer = () => {
                 
             <div className="row text-white bg-dark">
                 <div className="col-sm-4 text-white bg-dark">
-                    <div className="card text-white bg-dark">
+                    <div className="footercontaint card text-white bg-dark">
                     <div className="card-body text-white bg-dark text-center">
                         <h5 className="card-title">Services</h5>
                         <p className="card-text">Interiors</p>
@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-sm-4 text-white bg-dark">
-                    <div className="card text-white bg-dark">
+                    <div className="footercontaint card text-white bg-dark">
                     <div className="card-body text-white bg-dark text-center">
                         <h5 className="card-title">About</h5>
                         <p className="card-text">Company</p>
@@ -32,7 +32,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-sm-4 text-white bg-dark">
-                    <div className="card text-white bg-dark">
+                    <div className="footercontaint card text-white bg-dark">
                     <div className="card-body text-white bg-dark text-center">
                         <h5 className="card-title">Company</h5>
                         <p className="card-text">VALIANT REAL-ESTATE AND CONSTRUCTIONS</p>
@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
 
             </div>
-            <div className="card-footer text-center item social">
+            <div className="footercontaint card-footer text-center item social">
                 <div className='row'>
 
                 <div className='col-sm-3'>
