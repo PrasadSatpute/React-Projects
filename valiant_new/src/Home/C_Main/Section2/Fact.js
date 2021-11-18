@@ -11,22 +11,22 @@ const Fact = () => {
         <div className="row counters">
 
   				<div className="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">232</span>
+            <span data-toggle="counter-up">20</span>
             <p>Clients</p>
   				</div>
 
           <div className="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">521</span>
+            <span data-toggle="counter-up">6</span>
             <p>Projects</p>
   				</div>
 
           <div className="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">1,463</span>
-            <p>Hours Of Support</p>
+            <span data-toggle="counter-up">24hr</span>
+            <p>Support</p>
   				</div>
 
           <div className="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
+            <span data-toggle="counter-up">50</span>
             <p>Hard Workers</p>
   				</div>
 
