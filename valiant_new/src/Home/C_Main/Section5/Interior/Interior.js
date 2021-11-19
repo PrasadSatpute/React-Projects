@@ -13,7 +13,7 @@ import logo3IMG from '../../../../TemplateFiles/img/portfolio/logo3.jpg'
 import web1IMG from '../../../../TemplateFiles/img/portfolio/web1.jpg'
 import logo2IMG from '../../../../TemplateFiles/img/portfolio/logo2.jpg'
 
-const Portfolio = () =>{
+const Interior = () =>{
     return(
       <div className="row" id="portfolio-wrapper">
       <div className="col-lg-3 col-md-6 portfolio-item filter-card">
@@ -47,4 +47,4 @@ const Portfolio = () =>{
     )
 }
 
-export default Portfolio
+export default Interior
